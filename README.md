@@ -1,5 +1,6 @@
 # THDLscraping
-This is a scraper that could scrap down land contracts found on THDL database.\\
+This is a scraper that could scrap down land contracts found on THDL database.
+
 THDL is a online database maintained by Research Center for Digital Humanities, Naitonal Taiwan University. This database aims at preserving land contracts from Qin dynasty and Japanese-occupied period in Taiwan.
 For more information, please visti THDL.
 URL:http://thdl.ntu.edu.tw/THDL/RetrieveDocs.php
