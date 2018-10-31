@@ -112,7 +112,7 @@ def scrap_zhao(keyword):
                     tree_contract_list = []
                     for tree_contract in tree_page.findAll("input",{"id":re.compile("^(g1)")}):
                         tree_contract_list.append(tree_contract.attrs["value"])
-                    
+                    tree_number = 1
                     for tree_contract in tree_contract_list:    
                         
                         tree_contract_session = session.get('http://thdl.ntu.edu.tw/THDL/RetrieveDocs.php?text_query={'+tree_contract+'}')
@@ -123,8 +123,8 @@ def scrap_zhao(keyword):
                             tree_year = year.replace(":","")
                         tree_contract_content = tree_contract_page.find(id='doc1_x_1')
                         tree_contract_content.findAll('span')[-1].extract()
-                        pdfkit.from_string(str(tree_contract_content).decode('utf-8'),keyword_dic[keyword]+"."+year+"."+str(serial_number)+"."+tree_year+".pdf",configuration=config,options=printoptions)
-                        
+                        pdfkit.from_string(str(tree_contract_content).decode('utf-8'),keyword_dic[keyword]+"."+year+"."+str(serial_number)+"."+tree_year+"."+str(tree_number)+".pdf",configuration=config,options=printoptions)
+                        tree_number += 1
                     serial_number += 1
         else:
             if found % 10 == 0:
@@ -171,7 +171,7 @@ def scrap_zhao(keyword):
                         tree_contract_list = []
                         for tree_contract in tree_page.findAll("input",{"id":re.compile("^(g1)")}):
                             tree_contract_list.append(tree_contract.attrs["value"])
-                        
+                        tree_number = 1
                         for tree_contract in tree_contract_list:    
                             
                             tree_contract_session = session.get('http://thdl.ntu.edu.tw/THDL/RetrieveDocs.php?text_query={'+tree_contract+'}')
@@ -182,8 +182,8 @@ def scrap_zhao(keyword):
                                 tree_year = year.replace(":","")
                             tree_contract_content = tree_contract_page.find(id='doc1_x_1')
                             tree_contract_content.findAll('span')[-1].extract()
-                            pdfkit.from_string(str(tree_contract_content).decode('utf-8'),keyword_dic[keyword]+"."+year+"."+str(serial_number)+"."+tree_year+".pdf",configuration=config,options=printoptions)
-                            
+                            pdfkit.from_string(str(tree_contract_content).decode('utf-8'),keyword_dic[keyword]+"."+year+"."+str(serial_number)+"."+tree_year+"."+str(tree_number)+".pdf",configuration=config,options=printoptions)
+                            tree_number += 1
                         serial_number += 1
 
 #scraping
