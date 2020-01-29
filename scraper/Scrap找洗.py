@@ -21,7 +21,7 @@ keyword_dic = { '找':'zhao','洗':'shi','贈':'zheng','增':'tseng','添':'tian
 empieror = [ '康熙','雍正','乾隆','嘉慶','道光','咸豐','同治','光緒','明治','大正']
 
 headers = {'User-Agent': 'Mozilla/5.0'}
-payload = {'username': 'pohan1@ntu.edu.tw','password': 'sp50315A'}
+payload = {'username': 'enterusername','password': 'enterpassword'}
 
 session = requests.Session()
 session.post('http://thdl.ntu.edu.tw/THDL/RetrieveDocs.php',headers=headers,data=payload) #login
@@ -35,22 +35,6 @@ printoptions = {
     'DPI':'96',
     'zoom':'1.4'
 }
-
-
-
-#scrap a single contract
-tmpsession = session.get('http://thdl.ntu.edu.tw/THDL/RetrieveDocs.php?text_query=cca100003-od-383510500e_0006025_01-0001-u.txt')
-page = BeautifulSoup(tmpsession.text,"html.parser").find(id='doc1_x_1')
-page.findAll('span')[-1].extract()
-pdfkit.from_string(str(page).decode('utf-8'),"demo.pdf",configuration=config,options=printoptions)
-
-#scrap the tree 
-tmp = session.get('http://thdl.ntu.edu.tw/THDL/RetrieveSVG.php?filename=cca100003-od-383510500e_0006025_01-0001-u.txt')
-svg =  BeautifulSoup(tmp.text.encode('utf-8'),"html.parser")
-pdfkit.from_string(str(svg).decode('utf-8'),"demo.tree.pdf",configuration=config,options=printoptions)
-
-
-
 
 os.chdir('D:\\')
 #define the scraper
@@ -187,5 +171,7 @@ def scrap_zhao(keyword):
                         serial_number += 1
 
 #scraping
- 
+if __name__ == "__main__":
+    for keyword in keyword_dic.keys():
+        scrap_zhao(keyword)
     
