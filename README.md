@@ -7,7 +7,7 @@ For more information, please visti THDL.
 URL:http://thdl.ntu.edu.tw/THDL/RetrieveDocs.php
 
 # About the author
-I work as a research assitant for Professor Hui-wen, Koo, Natinoal Taiwan University. 
+I worked as a research assitant for Professor Hui-wen, Koo, Natinoal Taiwan University. 
 
 Professor Koo's recent study tries to find out what contributed to the existence of a special type of transaction: zhao-xi. Zhao-xi normally took place after a "real" transaction in which the ownership of the property shifted from the seller(s) to the buyer(s). Years after the transaction, the seller(s) would come to the buyer and try to "zhoa" for more money. From an economic prospective, it made the orginal transaction unefficient because the price was not the real cost of the property.
 
